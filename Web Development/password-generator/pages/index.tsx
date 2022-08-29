@@ -9,7 +9,12 @@ const Header = styled.h1`
 
 const Home: NextPage = () => {
   return (
-      <Header>Radhe Radhe</Header>
+      <>
+        <Header>Radhe Radhe</Header>
+        <ul>
+          <li>Haribolll</li>
+        </ul>
+      </>
   )
 
 }
