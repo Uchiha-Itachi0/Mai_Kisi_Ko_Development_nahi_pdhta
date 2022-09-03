@@ -17,6 +17,7 @@ const ButtonStyled = styled.div`
   &:hover {
     &::before, &::after {
       width: 50%;
+      transition-delay: .1s;
     }
     
     h1{
@@ -26,6 +27,7 @@ const ButtonStyled = styled.div`
         &:nth-child(2){
           transform: scale(1);
           opacity: 1;
+          transition-delay: .2s;
         }
     }
   }
@@ -34,10 +36,11 @@ const ButtonStyled = styled.div`
     content: "";
     top: 0;
     position: absolute;
-    width: 10%;
+    width: 5%;
     height: 100%;
     background: rgb(252, 0, 21);
     transition: .5s;
+    transition-delay: .1s;
   }
   &::before {
     left: 0;
@@ -55,6 +58,10 @@ const ButtonStyled = styled.div`
     transition: .5s;
     font-size: max(10px, 1vw);
     
+    &:nth-child(1){
+      transition-delay: .2s;
+    }
+    
     &:nth-child(2){
       transform: scale(6);
       opacity: 0;
@@ -63,7 +70,7 @@ const ButtonStyled = styled.div`
   
   
 `;
-const Button = () => {
+const Button: NextPage = () => {
     return (
         <ButtonStyled>
             <h1>Generate</h1>
