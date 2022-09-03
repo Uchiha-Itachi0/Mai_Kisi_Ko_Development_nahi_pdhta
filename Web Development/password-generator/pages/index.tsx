@@ -1,19 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import styled from "styled-components";
-
-const Header = styled.h1`
-  color: red;
-`;
+import DisplayPassword from "../Components/DisplayPassword";
 
 const Home: NextPage = () => {
   return (
       <>
-        <Header>Radhe Radhe</Header>
-        <ul>
-          <li>Haribolll</li>
-        </ul>
+         <DisplayPassword />
       </>
   )
 
