@@ -72,7 +72,7 @@ const DisplayPassword: NextPage<Props> = (props) => {
                     <h1>Password 2 will be displayed here</h1>
                     <ContentCopyIcon className = "display_password_container_copy_icon"/>
                 </div>
-            </div>
+           </div>
         </StyledDisplayPassword>
     )
 };
