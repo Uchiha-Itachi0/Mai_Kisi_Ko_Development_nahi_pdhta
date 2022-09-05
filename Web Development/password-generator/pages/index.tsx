@@ -5,11 +5,13 @@ import DisplayPassword from "../Components/DisplayPassword";
 import Button from "../Components/Button";
 import Range from "../Components/Range";
 import CheckBox from "../Components/CheckBox";
+import DifficultyMeter from "../Components/DifficultyMeter";
 
 const Home: NextPage = () => {
   return (
       <>
-          <CheckBox />
+          <DifficultyMeter />
+          {/*<CheckBox />*/}
           {/*<Range />*/}
           {/*<Button />*/}
          {/*<DisplayPassword />*/}
