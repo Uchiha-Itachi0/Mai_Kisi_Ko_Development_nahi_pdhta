@@ -2,11 +2,11 @@ import type { NextPage } from "next";
 import styled from "styled-components";
 
 interface Props {
-    TEXT: string;
-    BORDER_LENGTH: string;
-    BORDER_COLOR: string;
-    BACKGROUND_COLOR: string;
-    DIFFICULTY_NUMBER: number;
+    TEXT?: string;
+    BORDER_LENGTH?: string;
+    BORDER_COLOR?: string;
+    BACKGROUND_COLOR?: string;
+    DIFFICULTY_NUMBER?: number;
 }
 
 interface styleProps {

@@ -2,7 +2,21 @@ import type { NextPage } from 'next'
 import styled from "styled-components";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
-const StyledDisplayPassword = styled.div`
+interface Props {
+    WIDTH?: string;
+    HEIGHT?: string;
+    COLOR?: string;
+    BACKGROUND?: string;
+}
+
+interface styleProps {
+    WIDTH: string;
+    HEIGHT: string;
+    COLOR: string;
+    BACKGROUND: string;
+}
+
+const StyledDisplayPassword = styled.div<styleProps>`
   position: relative;
   width: max-content;
   height: max-content;
@@ -30,11 +44,11 @@ const StyledDisplayPassword = styled.div`
     display: flex;
     justify-content: space-between;
     padding: .5em 1em;
-    background: ${({BACKGROUND} : Props) => BACKGROUND ? BACKGROUND : "#000"};
-    color: ${({COLOR}: Props) => COLOR ? COLOR : "#fff"};
+    background: ${({BACKGROUND}) => BACKGROUND};
+    color: ${({COLOR}) => COLOR};
     align-items: center;
-    width: ${({WIDTH}: Props) => WIDTH ? WIDTH : '500px'};
-    height: ${({HEIGHT}: Props) => HEIGHT ? HEIGHT : '50px'};
+    width: ${({WIDTH}) => WIDTH};
+    height: ${({HEIGHT}) => HEIGHT};
     transform: translateZ(50px);
     
     .display_password_container_copy_icon {
@@ -48,18 +62,15 @@ const StyledDisplayPassword = styled.div`
   }
 ;`
 
-interface Props {
-    WIDTH?: string;
-    HEIGHT?: string;
-    COLOR?: string;
-    BACKGROUND?: string;
-}
-const DisplayPassword: NextPage<Props> = (props) => {
 
-    const {WIDTH,
-        HEIGHT,
-        COLOR,
-        BACKGROUND } = props;
+const DisplayPassword: NextPage<Props> = ({
+    WIDTH = "500px",
+    HEIGHT = "50px",
+    COLOR = "#fff",
+    BACKGROUND = "#000"
+
+                                          }) => {
+
     return (
         <StyledDisplayPassword WIDTH = {WIDTH} HEIGHT={HEIGHT}
                                COLOR={COLOR} BACKGROUND={BACKGROUND}>

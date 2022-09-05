@@ -4,7 +4,6 @@ import { useState } from "react";
 
 interface styleProps{
     WIDTH?: number;
-    setWidth?: any;
 }
 
 const RangeStyle = styled.div<styleProps>`
