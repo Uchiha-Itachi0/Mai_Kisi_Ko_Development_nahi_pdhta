@@ -5,6 +5,7 @@ import Range from "./Range";
 import CheckBox from "./CheckBox";
 import Button from "./Button";
 import { useState } from "react";
+import generatePassword from "../utils/password_generator";
 
 const CardStyle = styled.div`
     display: flex;
@@ -56,6 +57,8 @@ interface checkBox {
 const Card: NextPage = () => {
 
     const [ RANGE_VALUE, setRANGE_VALUE ] = useState(5);
+    const [PASSWORD, setPASSWORD] = useState<string>("Password will be displayed here");
+    const [ROTATE, setROTATE] = useState<boolean>(false);
     const [ CHECKBOX, setCHECKBOX ] = useState<checkBox>({
         lowercase: false,
         uppercase: false,
@@ -68,12 +71,19 @@ const Card: NextPage = () => {
         setRANGE_VALUE(value);
     }
 
+    const buttonClickedHandler = () => {
+        const password: string = generatePassword(RANGE_VALUE, CHECKBOX.lowercase, CHECKBOX.uppercase, CHECKBOX.numbers, CHECKBOX.symbols);
+        setPASSWORD(password);
+        setROTATE(!ROTATE);
+    }
     return (
         <CardStyle>
             <div className="card_display_password">
                 <DisplayPassword
-                WIDTH = "100%" HEIGHT = "100%"
-                BACKGROUND = "#24232B"/>
+                    TEXT={PASSWORD}
+                    WIDTH = "100%" HEIGHT = "100%"
+                    BACKGROUND = "#24232B"
+                    ROTATE = {ROTATE}/>
             </div>
             <div className="card_display_mid">
                 <div className="card_display_mid_range_container">
@@ -86,13 +96,13 @@ const Card: NextPage = () => {
                 <div className="card_display_mid_checkbox_container">
                     <CheckBox name = "uppercase" checkBoxClicked = {setCHECKBOX} TEXT = "Include Uppercase Letters"/>
                     <CheckBox name = "lowercase" checkBoxClicked = {setCHECKBOX} TEXT = "Include Lowercase Letters"/>
-                    <CheckBox name = "number" checkBoxClicked = {setCHECKBOX} TEXT = "Include numbers"/>
-                    <CheckBox name = "symbol" checkBoxClicked = {setCHECKBOX} TEXT = "Include symbols"/>
+                    <CheckBox name = "numbers" checkBoxClicked = {setCHECKBOX} TEXT = "Include numbers"/>
+                    <CheckBox name = "symbols" checkBoxClicked = {setCHECKBOX} TEXT = "Include symbols"/>
                 </div>
 
             </div>
             <div className="card_button">
-                <Button WIDTH = "100%" HEIGHT = "100%"/>
+                <Button buttonClickedHandler = {() => buttonClickedHandler()}WIDTH = "100%" HEIGHT = "100%"/>
             </div>
         </CardStyle>
     );

@@ -4,6 +4,8 @@ import styled from "styled-components";
 interface Props{
     WIDTH?: string;
     HEIGHT?: string;
+    buttonClickedHandler: () => void;
+
 }
 
 interface styleProps {
@@ -83,9 +85,10 @@ const ButtonStyled = styled.div<styleProps>`
 const Button: NextPage<Props> = ({
     WIDTH = "5vw",
     HEIGHT = "2vw",
+    buttonClickedHandler,
                                  }) => {
     return (
-        <ButtonStyled WIDTH={WIDTH} HEIGHT={HEIGHT}>
+        <ButtonStyled WIDTH={WIDTH} HEIGHT={HEIGHT} onClick={() => buttonClickedHandler()}>
             <h1>Generate</h1>
             <h1>Generate</h1>
         </ButtonStyled>
