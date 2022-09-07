@@ -1,14 +1,24 @@
 import type { NextPage } from "next";
 import styled from "styled-components";
 
-const ButtonStyled = styled.div`
+interface Props{
+    WIDTH?: string;
+    HEIGHT?: string;
+}
+
+interface styleProps {
+    WIDTH: string;
+    HEIGHT: string;
+}
+
+const ButtonStyled = styled.div<styleProps>`
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1em 2em;
-  height: 2vw;
-  width: 5vw;
+  height: ${({HEIGHT}) => HEIGHT};
+  width: ${({WIDTH}) => WIDTH};
   background: rgb(30, 30, 30);
   color: #fff;
   overflow: hidden;
@@ -70,9 +80,12 @@ const ButtonStyled = styled.div`
   
   
 `;
-const Button: NextPage = () => {
+const Button: NextPage<Props> = ({
+    WIDTH = "5vw",
+    HEIGHT = "2vw",
+                                 }) => {
     return (
-        <ButtonStyled>
+        <ButtonStyled WIDTH={WIDTH} HEIGHT={HEIGHT}>
             <h1>Generate</h1>
             <h1>Generate</h1>
         </ButtonStyled>

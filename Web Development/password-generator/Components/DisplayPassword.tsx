@@ -17,48 +17,43 @@ interface styleProps {
 }
 
 const StyledDisplayPassword = styled.div<styleProps>`
-  position: relative;
-  width: max-content;
-  height: max-content;
+  width: ${({WIDTH}) => WIDTH};
+  height: ${({HEIGHT}) => HEIGHT};
   transform-style: preserve-3d;
   perspective: 1000px;
-
-  &:hover {
+  background: transparent;
+  
+  &:hover{
     .display_password{
       transform: rotateX(180deg) translateZ(-50px);
     }
   }
-
-  
-  .display_password {
-    position: relative;
-    transition: .5s;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-    background: red;
-    
-  }
-  
-  
-  .display_password_container {
-    display: flex;
-    justify-content: space-between;
-    padding: .5em 1em;
-    background: ${({BACKGROUND}) => BACKGROUND};
-    color: ${({COLOR}) => COLOR};
-    align-items: center;
-    width: ${({WIDTH}) => WIDTH};
-    height: ${({HEIGHT}) => HEIGHT};
-    transform: translateZ(50px);
-    
-    .display_password_container_copy_icon {
-      cursor: pointer;
-    }
-  }
-  .display_password_container_back {
+  .display_password{
     position: absolute;
     inset: 0;
-    transform: rotateX(180deg)
+    transition: .5s;
+    transform-style: preserve-3d;
+    perspective: 10000000px;
+    background: transparent;
+
+
+    .display_password_container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: ${({BACKGROUND}) => BACKGROUND};
+      color: ${({COLOR}) => COLOR};
+      position: absolute;
+      inset: 0;
+      padding: 1em 2em;
+      z-index: 1;
+      transform: translateZ(50px);
+    }
+    
+    .display_password_container_back{
+      transform: rotateX(180deg);
+      
+    }
   }
 ;`
 

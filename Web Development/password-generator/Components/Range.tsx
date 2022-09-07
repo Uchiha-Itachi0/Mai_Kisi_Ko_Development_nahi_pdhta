@@ -2,12 +2,19 @@ import type { NextPage } from "next";
 import styled from "styled-components"
 import { useState } from "react";
 
+interface Props {
+    WIDTH?: string;
+    inputRangeHandler: any;
+    RANGE_VALUE: number;
+}
+
 interface styleProps{
-    WIDTH?: number;
+    PROGRESS_WIDTH: number;
+    WIDTH: string;
 }
 
 const RangeStyle = styled.div<styleProps>`
-  width: 500px;
+  width: ${({WIDTH}) => WIDTH};
 input[type="range"] {
   -webkit-appearance: none;
   position: relative;
@@ -15,19 +22,18 @@ input[type="range"] {
   height: 10px;
   background: black;
   
-  &::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: blue;
-    width: ${({WIDTH}) => String(WIDTH) + "%"};
+  &::-webkit-slider-runnable-track{
+    overflow: hidden;
+
   }
+  
   &::-webkit-slider-thumb{
     -webkit-appearance: none;
     position: relative;
     width: .6vw;
     height: 2vw;
     background: red;
+    box-shadow: -407px 0 0 400px blue;
   }
   &::-moz-range-thumb{
     -webkit-appearance: none;
@@ -35,6 +41,7 @@ input[type="range"] {
     width: .6vw;
     height: 2vw;
     background: red;
+    border: none;
   }
   
   &::-moz-range-progress{
@@ -50,17 +57,15 @@ input[type="range"] {
 }
 `;
 
-const Range: NextPage = () => {
+const Range: NextPage<Props> = ({
+    WIDTH = "500px",
+    inputRangeHandler,
+    RANGE_VALUE
+                         }) => {
 
-    const [ RANGE_VALUE, setRANGE_VALUE ] = useState(40);
-
-    const inputRangeHandler = (e: any) => {
-        const value: number = e.target.value;
-        setRANGE_VALUE(value);
-    }
     return (
-        <RangeStyle WIDTH = {RANGE_VALUE}>
-            <input type={"range"} value={RANGE_VALUE} min={0} max={100} onChange={ (e) => inputRangeHandler(e)}/>
+        <RangeStyle PROGRESS_WIDTH = {RANGE_VALUE} WIDTH = {WIDTH}>
+            <input type={"range"} value={RANGE_VALUE} min={5} max={12} onChange={ (e) => inputRangeHandler(e)}/>
         </RangeStyle>
     )
 }

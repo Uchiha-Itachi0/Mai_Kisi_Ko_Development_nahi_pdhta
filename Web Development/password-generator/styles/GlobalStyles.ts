@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
-	background: #fff;
+	background: #000;
     display: flex;
     justify-content: center;
     align-items: center;
