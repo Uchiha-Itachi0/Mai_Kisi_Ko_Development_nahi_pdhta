@@ -47,16 +47,17 @@ const StyledDisplayPassword = styled.div<styleProps>`
       color: ${({COLOR}) => COLOR};
       position: absolute;
       inset: 0;
-      padding: 1em 2em;
+      padding: 2vw 3.2vw;
       z-index: 1;
       transform: translateZ(50px);
       
       .display_password_container_copy_icon{
         cursor: pointer;
+        font-size: max(1.5em, 1.5vw);
       }
       
       h1{
-        font-size: max(1.5vw, 1.5em);
+        font-size: max(1.5vw, 1em);
         letter-spacing: .1em;
       }
     }
@@ -64,6 +65,35 @@ const StyledDisplayPassword = styled.div<styleProps>`
     .display_password_container_back{
       transform: rotateX(180deg);
       
+    }
+  }
+  
+  @media screen and (max-width: 800px){
+    .display_password{
+      .display_password_container{
+        padding: .1em 1em;
+        
+        h1{
+          font-size: 3vw;
+        }
+        
+        .display_password_container_copy_icon{
+          font-size: 3vw;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 450px){
+    .display_password{
+      .display_password_container{
+        h1{
+          font-size: 4vw;
+        }
+
+        .display_password_container_copy_icon{
+          font-size: 4vw;
+        }
+      }
     }
   }
 ;`

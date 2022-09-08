@@ -3,11 +3,11 @@ import styled from "styled-components";
 import { useState, Dispatch, SetStateAction, MouseEvent } from "react";
 const CheckBoxStyle = styled.div`
     .check_box_container{
-      width: 500px;
-      padding: 1em;
+      width: 100%;
+      padding: 1vw;
       display: flex;
       flex-direction: row;
-      gap: 2em;
+      gap: 2vw;
       
       .check_box_container_checkbox{
         width: 2vw;
@@ -27,11 +27,43 @@ const CheckBoxStyle = styled.div`
         align-items: center;
         
         h1{
-          font-size: max(1.5vw, 1.5em);
+          font-size: max(1.5vw, 1em);
         }
       }
     }
     
+  @media only screen and (max-width: 800px) {
+    .check_box_container{
+      gap: 2em;
+      
+      .check_box_container_checkbox{
+        width: 4vw;
+        height: 4vw;
+      }
+      
+      .check_box_container_heading_container{
+        h1{
+          font-size: 3vw;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 450px) {
+    .check_box_container{
+      gap: 1em;
+
+      .check_box_container_checkbox{
+        width: 5vw;
+        height: 5vw;
+      }
+
+      .check_box_container_heading_container{
+        h1{
+          font-size: 4vw;
+        }
+      }
+    }
+  }
 `;
 interface checkbox{
     lowercase: boolean;

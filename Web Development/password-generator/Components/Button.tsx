@@ -68,7 +68,7 @@ const ButtonStyled = styled.div<styleProps>`
     position: absolute;
     z-index: 1;
     transition: .5s;
-    font-size: max(10px, 1vw);
+    font-size: max(10px, 1.5vw);
     
     &:nth-child(1){
       transition-delay: .2s;
@@ -81,7 +81,12 @@ const ButtonStyled = styled.div<styleProps>`
     }
   }
   
-  
+  @media only screen and (max-width: 800px){
+    padding: 1.2em;
+    h1{
+      font-size: 3vw;
+    }
+  }
 `;
 const Button: NextPage<Props> = ({
     WIDTH = "5vw",

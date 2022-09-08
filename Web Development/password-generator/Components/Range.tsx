@@ -5,8 +5,8 @@ interface Props {
     WIDTH?: string;
     inputRangeHandler: any;
     RANGE_VALUE: number;
-    MIN_RANGE: number;
-    MAX_RANGE: number;
+    MIN_RANGE?: number;
+    MAX_RANGE?: number;
 }
 
 interface styleProps{
@@ -34,7 +34,7 @@ input[type="range"] {
     width: .6vw;
     height: 2vw;
     background: #fff;
-    box-shadow: -407px 0 0 400px greenyellow;
+    box-shadow: -1000px 0 0 1000px greenyellow;
   }
   &::-moz-range-thumb{
     -webkit-appearance: none;

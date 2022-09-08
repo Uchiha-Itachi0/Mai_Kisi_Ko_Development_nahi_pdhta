@@ -10,10 +10,11 @@ import generatePassword from "../utils/password_generator";
 const CardStyle = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    gap: 2.5vw;
+    width: max(300px, 40vw);
     .card_display_password{
-      background: #24232B;
-      height: 80px;
+      background: transparent;
+      height: max(80px, 5vw);
       position: relative;
     }
   .card_display_mid{
@@ -25,7 +26,7 @@ const CardStyle = styled.div`
     .card_display_mid_range_container{
       display: flex;
       justify-content: space-between;
-      margin-bottom: 1em;
+      margin-bottom: 1vw;
       
       h1{
         font-size: 1.5vw;
@@ -34,7 +35,9 @@ const CardStyle = styled.div`
     }
     
     .card_display_mid_checkbox_container{
-      margin-top: 1em;
+      display: flex;
+      flex-direction: column;
+      margin-top: 1vw;
     }
   }
   .card_button{
@@ -42,6 +45,37 @@ const CardStyle = styled.div`
     justify-content: center;
     align-items: center;
     height: 2vw;
+  }
+  
+  @media only screen and (max-width: 800px) {
+    gap: 2em;
+    width: 60vw;
+    
+    .card_display_mid{
+      .card_display_mid_range_container{
+        h1{
+          font-size: 3vw;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 450px) {
+    width: 80vw;
+    .card_display_password{
+      height: 10vw;
+      background: transparent;
+    }
+
+    .card_display_mid{
+      .card_display_mid_range_container{
+        h1{
+          font-size: 5vw;
+        }
+      }
+      .card_display_mid_checkbox_container{
+        gap: 2vw;
+      }
+    }
   }
 
 `;
