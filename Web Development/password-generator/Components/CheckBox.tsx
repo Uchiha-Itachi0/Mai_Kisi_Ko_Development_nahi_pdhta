@@ -25,6 +25,10 @@ const CheckBoxStyle = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+        
+        h1{
+          font-size: max(1.5vw, 1.5em);
+        }
       }
     }
     

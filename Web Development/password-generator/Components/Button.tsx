@@ -48,9 +48,9 @@ const ButtonStyled = styled.div<styleProps>`
     content: "";
     top: 0;
     position: absolute;
-    width: 5%;
+    width: 2%;
     height: 100%;
-    background: rgb(252, 0, 21);
+    background: greenyellow;
     transition: .5s;
     transition-delay: .1s;
   }
@@ -61,7 +61,7 @@ const ButtonStyled = styled.div<styleProps>`
   
   &::after{
     right: 0;
-    background: teal;
+    background: greenyellow;
   }
   
   h1{
@@ -75,6 +75,7 @@ const ButtonStyled = styled.div<styleProps>`
     }
     
     &:nth-child(2){
+      color: #000;
       transform: scale(6);
       opacity: 0;
     }

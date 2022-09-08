@@ -1,11 +1,12 @@
 import type { NextPage } from "next";
 import styled from "styled-components"
-import { useState } from "react";
 
 interface Props {
     WIDTH?: string;
     inputRangeHandler: any;
     RANGE_VALUE: number;
+    MIN_RANGE: number;
+    MAX_RANGE: number;
 }
 
 interface styleProps{
@@ -32,27 +33,27 @@ input[type="range"] {
     position: relative;
     width: .6vw;
     height: 2vw;
-    background: red;
-    box-shadow: -407px 0 0 400px blue;
+    background: #fff;
+    box-shadow: -407px 0 0 400px greenyellow;
   }
   &::-moz-range-thumb{
     -webkit-appearance: none;
     position: relative;
     width: .6vw;
     height: 2vw;
-    background: red;
+    background: #fff;
     border: none;
   }
   
   &::-moz-range-progress{
     width: 100%;
     height: 100%;
-    background: blue;
+    background: greenyellow;
   }
   &::-ms-fill{
     width: 100%;
     height: 100%;
-    background: blue;
+    background: greenyellow;
   }
 }
 `;
@@ -60,12 +61,14 @@ input[type="range"] {
 const Range: NextPage<Props> = ({
     WIDTH = "500px",
     inputRangeHandler,
-    RANGE_VALUE
+    RANGE_VALUE,
+    MIN_RANGE = 5,
+    MAX_RANGE = 12
                          }) => {
 
     return (
         <RangeStyle PROGRESS_WIDTH = {RANGE_VALUE} WIDTH = {WIDTH}>
-            <input type={"range"} value={RANGE_VALUE} min={5} max={12} onChange={ (e) => inputRangeHandler(e)}/>
+            <input type={"range"} value={RANGE_VALUE} min={MIN_RANGE} max={MAX_RANGE} onChange={ (e) => inputRangeHandler(e)}/>
         </RangeStyle>
     )
 }

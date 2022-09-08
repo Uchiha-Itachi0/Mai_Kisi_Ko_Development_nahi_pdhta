@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import styled from "styled-components";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import copy from "copy-to-clipboard";
 
 interface Props {
     TEXT?: string;
@@ -50,6 +51,10 @@ const StyledDisplayPassword = styled.div<styleProps>`
       z-index: 1;
       transform: translateZ(50px);
       
+      .display_password_container_copy_icon{
+        cursor: pointer;
+      }
+      
       h1{
         font-size: max(1.5vw, 1.5em);
         letter-spacing: .1em;
@@ -74,17 +79,23 @@ const DisplayPassword: NextPage<Props> = ({
 
                                           }) => {
 
+    const copyToClipboard = () => {
+        copy(TEXT);
+        alert("Copied to clipboard");
+    }
+
+
     return (
         <StyledDisplayPassword WIDTH = {WIDTH} HEIGHT={HEIGHT}
                                COLOR={COLOR} BACKGROUND={BACKGROUND}>
             <div className={`display_password ${ROTATE ? "rotate": ""}`}>
                 <div className="display_password_container">
                     <h1>{TEXT}</h1>
-                    <ContentCopyIcon className = "display_password_container_copy_icon"/>
+                    <ContentCopyIcon className = "display_password_container_copy_icon" onClick = {() => copyToClipboard()}/>
                 </div>
                 <div className="display_password_container display_password_container_back">
                     <h1>{TEXT}</h1>
-                    <ContentCopyIcon className = "display_password_container_copy_icon"/>
+                    <ContentCopyIcon className = "display_password_container_copy_icon" onClick={() => copyToClipboard()}/>
                 </div>
            </div>
         </StyledDisplayPassword>
