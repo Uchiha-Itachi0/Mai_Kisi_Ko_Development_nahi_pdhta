@@ -6,6 +6,8 @@ import CheckBox from "./CheckBox";
 import Button from "./Button";
 import { useState } from "react";
 import generatePassword from "../utils/password_generator";
+import DifficultyMeter from "./DifficultyMeter";
+import { checkBoxInterface} from "../utils/Interface";
 
 const CardStyle = styled.div`
     display: flex;
@@ -40,6 +42,15 @@ const CardStyle = styled.div`
       margin-top: 1vw;
     }
   }
+  .card_display_mid_difficulty_meter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4em 1em;
+    background: rgba(30, 30, 30, 0.8);
+    margin-top: 1em;
+    font-size: max(1.2vw, .8em);
+  }
   .card_button{
     display: flex;
     justify-content: center;
@@ -56,6 +67,10 @@ const CardStyle = styled.div`
         h1{
           font-size: 3vw;
         }
+      }
+      
+      .card_display_mid_difficulty_meter{
+        font-size: 3vw;
       }
     }
   }
@@ -81,24 +96,18 @@ const CardStyle = styled.div`
 `;
 
 
-interface checkBox {
-    lowercase: boolean;
-    uppercase: boolean;
-    numbers: boolean;
-    symbols: boolean;
-}
-
 const Card: NextPage = () => {
 
     const [ RANGE_VALUE, setRANGE_VALUE ] = useState(5);
     const [PASSWORD, setPASSWORD] = useState<string>("Password will be displayed here");
     const [ROTATE, setROTATE] = useState<boolean>(false);
-    const [ CHECKBOX, setCHECKBOX ] = useState<checkBox>({
+    const [ CHECKBOX, setCHECKBOX ] = useState<checkBoxInterface>({
         lowercase: false,
         uppercase: false,
         numbers: false,
         symbols: false
     });
+
 
     const inputRangeHandler = (e: any) => {
         const value: number = e.target.value;
@@ -110,6 +119,7 @@ const Card: NextPage = () => {
         setPASSWORD(password);
         setROTATE(!ROTATE);
     }
+
     return (
         <CardStyle>
             <div className="card_display_password">
@@ -132,6 +142,13 @@ const Card: NextPage = () => {
                     <CheckBox name = "lowercase" checkBoxClicked = {setCHECKBOX} TEXT = "Include Lowercase Letters"/>
                     <CheckBox name = "numbers" checkBoxClicked = {setCHECKBOX} TEXT = "Include numbers"/>
                     <CheckBox name = "symbols" checkBoxClicked = {setCHECKBOX} TEXT = "Include symbols"/>
+                </div>
+
+                <div className="card_display_mid_difficulty_meter">
+                    <h1>STRENGTH</h1>
+                    <DifficultyMeter
+                        checkBox = {CHECKBOX}
+                        range = {RANGE_VALUE}/>
                 </div>
 
             </div>

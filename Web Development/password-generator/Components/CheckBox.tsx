@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import styled from "styled-components";
 import { useState, Dispatch, SetStateAction, MouseEvent } from "react";
+import {checkBoxInterface} from "../utils/Interface";
 const CheckBoxStyle = styled.div`
     .check_box_container{
       width: 100%;
@@ -65,15 +66,10 @@ const CheckBoxStyle = styled.div`
     }
   }
 `;
-interface checkbox{
-    lowercase: boolean;
-    uppercase: boolean;
-    numbers: boolean;
-    symbols: boolean;
-}
+
 interface Props {
     TEXT?: string;
-    checkBoxClicked: Dispatch<SetStateAction<checkbox>>;
+    checkBoxClicked: Dispatch<SetStateAction<checkBoxInterface>>;
     name: string;
 }
 
