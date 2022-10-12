@@ -1,0 +1,10 @@
+{
+  "name": "Snapper",
+  "version": "1.0.0",
+  "description": "Snapper is a fullpage screenshot tool for web developers.",
+  "manifest_version": 3,
+  "author": "Anubhav Shukla",
+  "action": {
+    "default_popup": "popup.html"
+  },
+}
