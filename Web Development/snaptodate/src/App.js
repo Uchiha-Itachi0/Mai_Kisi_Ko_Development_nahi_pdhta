@@ -5,7 +5,7 @@ import axios from "./axios/axiosInstance";
 function App() {
 
   useEffect(() => {
-    axios.get("/").then(r => console.log(r));
+    axios.get("/").then(r => console.log("Done"));
   }, []);
 
   return (
