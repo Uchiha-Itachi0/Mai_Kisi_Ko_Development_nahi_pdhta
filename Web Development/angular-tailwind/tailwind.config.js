@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{html,ts}', './src/**/**/*.{html,ts}'],
+  content: ['./src/app/*.{html,ts}', './src/app/**/*.{html,ts}'],
+  purge: {
+    enabled: true,
+    content: ['./src/**/*.{html,ts}']
+  },
   theme: {
     screens: {
       sm: '480px',
