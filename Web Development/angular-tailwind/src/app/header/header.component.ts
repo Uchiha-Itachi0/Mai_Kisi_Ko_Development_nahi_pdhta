@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  menuOpen: boolean = false;
   constructor() { }
+
+  OpenMenuOnClick() {
+    this.menuOpen = !this.menuOpen;
+  }
 
   ngOnInit(): void {
   }
