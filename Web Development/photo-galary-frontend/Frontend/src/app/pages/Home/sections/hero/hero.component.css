@@ -1,0 +1,8 @@
+#hero {
+  width: 100vw;
+  height: 100vh;
+  background: url("../../../../../assets/images/Home_Background.png") no-repeat center center;
+  background-size: cover;
+}
+
+/*# sourceMappingURL=hero.component.css.map */

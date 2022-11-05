@@ -1,0 +1,9 @@
+.logo a {
+  text-decoration: none;
+}
+.logo a h1 {
+  color: #1B6A4B;
+  font-size: max(2vw, 2rem);
+}
+
+/*# sourceMappingURL=header.component.css.map */
