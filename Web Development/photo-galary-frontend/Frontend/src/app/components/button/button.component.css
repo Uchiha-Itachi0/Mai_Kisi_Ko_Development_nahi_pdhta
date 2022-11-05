@@ -1,0 +1,25 @@
+.button_container {
+  margin: auto;
+  border: 2px solid #1B6A4B;
+  cursor: pointer;
+  width: max-content;
+  height: max-content;
+}
+.button_container .button_container_hover {
+  width: max-content;
+  height: max-content;
+  padding: 1vw 2vw;
+  transition: 0.4s;
+}
+.button_container .button_container_hover a {
+  font-size: 2vw;
+}
+.button_container:hover .button_container_hover {
+  background: #1B6A4B;
+  translate: 10px -10px;
+}
+.button_container:hover .button_container_hover a {
+  color: white;
+}
+
+/*# sourceMappingURL=button.component.css.map */

@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["hero.component.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;EACA","file":"hero.component.css"}
+{"version":3,"sourceRoot":"","sources":["hero.component.scss","../../../../../assets/variables/fonts.scss","../../../../../assets/variables/colors.scss"],"names":[],"mappings":"AAGA;EACE;EACA;EACA;EACA;;AAEA;EACE;EACA;;AAEA;EACE;EACA;EACA;EACA;EACA;;AACA;EACE;EACA;EACA;;AAEA;EACE;EACA;EACA,WCzBO;ED0BP;EACA,OE7BG;;AFkCT;EACE;EACA;;AACA;EACE;EACA;EACA;EACA;EACA","file":"hero.component.css"}

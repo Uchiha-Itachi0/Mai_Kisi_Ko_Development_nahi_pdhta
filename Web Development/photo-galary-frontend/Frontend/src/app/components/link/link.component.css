@@ -1,0 +1,16 @@
+.link_container {
+  padding: 0.5em;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+.link_container a {
+  font-size: max(1.2rem, 1.2vw);
+}
+.link_container:hover {
+  background-color: #1B6A4B;
+}
+.link_container:hover a {
+  color: white;
+}
+
+/*# sourceMappingURL=link.component.css.map */

@@ -1,0 +1,29 @@
+@use '../../../assets/variables/colors' as colors;
+.button_container {
+  margin: auto;
+  border: 2px solid colors.$dark-green;
+  cursor: pointer;
+  width: max-content;
+  height: max-content;
+
+  .button_container_hover {
+    width: max-content;
+    height: max-content;
+    padding: 1vw 2vw;
+    transition: .4s;
+    a {
+      font-size: 2vw;
+    }
+  }
+
+  &:hover {
+    .button_container_hover {
+      background: colors.$dark-green;
+      translate: 10px -10px;
+      a{
+        color: white
+      }
+    }
+  }
+
+}

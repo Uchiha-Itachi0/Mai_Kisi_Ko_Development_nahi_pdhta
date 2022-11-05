@@ -1,7 +1,48 @@
+@use '../../../../../assets/variables/fonts' as fontSize;
+@use '../../../../../assets/variables/colors' as colors;
+
 #hero {
   width: 100vw;
   height: 100vh;
   background: url("../../../../../assets/images/Home_Background.png") no-repeat center center;
   background-size: cover;
+
+  .hero_container {
+    height: 80vh;
+    display: flex;
+
+    .hero_container_text {
+      width: 50vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+
+        h1 {
+          width: 40vw;
+          margin: auto;
+          font-size: fontSize.$hero-text-size;
+          font-weight: 700;
+          color: colors.$dark-green;
+        }
+      }
+    }
+
+    .hero_container_image {
+      width: 50vw;
+      text-align: center;
+      .hero_image {
+        background: url("../../../../../assets/images/hero_image.png") no-repeat center center;
+        background-size: cover;
+        width: 40vw;
+        height: 80vh;
+        margin: auto;
+      }
+    }
+  }
 }
 

@@ -1,9 +1,33 @@
-.logo a {
-  text-decoration: none;
-}
 .logo a h1 {
   color: #1B6A4B;
-  font-size: max(2vw, 2rem);
+  font-size: max(2.3vw, 2.3rem);
+}
+
+.header_items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5em;
+}
+.header_items .menu_item {
+  display: flex;
+  font-size: max(1.2rem, 1.2vw);
+}
+.header_items .menu_item ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+.header_items .auth_item {
+  display: flex;
+  font-size: max(1.2rem, 1.2vw);
+}
+.header_items .auth_item ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
 }
 
 /*# sourceMappingURL=header.component.css.map */

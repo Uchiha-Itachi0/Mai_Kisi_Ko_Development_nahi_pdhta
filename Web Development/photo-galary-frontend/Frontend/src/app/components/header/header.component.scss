@@ -3,10 +3,39 @@
 
 .logo {
   a {
-    text-decoration: none;
     h1 {
-      color: colors.$primary;
+      color: colors.$dark-green;
       font-size: fontsize.$mid-font-size;
+    }
+  }
+}
+
+.header_items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5em;
+
+  .menu_item {
+    display: flex;
+    font-size: fontsize.$sm-font-size;
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1em;
+    }
+  }
+
+  .auth_item {
+    display: flex;
+    font-size: fontsize.$sm-font-size;
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1em;
     }
   }
 }
