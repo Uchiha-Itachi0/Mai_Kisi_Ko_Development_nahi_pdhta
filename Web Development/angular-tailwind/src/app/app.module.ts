@@ -23,9 +23,10 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
   ],
   providers: [],
-  exports: [
-    HeaderComponent
-  ],
+    exports: [
+        HeaderComponent,
+        HomeComponent
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
